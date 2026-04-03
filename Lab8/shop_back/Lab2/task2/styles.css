@@ -1,0 +1,411 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #fafafa;
+    color: #262626;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.container {
+    max-width: 935px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-wrapper {
+    display: flex;
+    width: 100%;
+    gap: 60px;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+/* Левая часть - мокап телефона*/
+.phone-section {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.phone-mockup {
+    width: 380px;
+    height: 580px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.phone-frame {
+    width: 250px;
+    height: 520px;
+    background: #f8f9fa;
+    border-radius: 40px;
+    box-shadow:
+            0 0 0 10px #ddd,
+            0 20px 40px rgba(0, 0, 0, 0.1),
+            inset 0 0 20px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.phone-screen {
+    width: 230px;
+    height: 500px;
+    background: white;
+    border-radius: 30px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.screen-content {
+    padding: 40px 15px 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.instagram-screen-logo {
+    font-family: 'Instagram Logo Font', cursive;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #262626;
+}
+
+.screen-stories {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.story {
+    min-width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #262626;
+}
+
+.story.active {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.story:not(.active) {
+    background: #dbdbdb;
+}
+
+.story::after {
+    content: '';
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+}
+
+.story.active::after {
+    background: white;
+}
+
+.phone-text {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: center;
+    color: #262626;
+    margin: 10px 0;
+}
+
+.screen-posts {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.post {
+    border: 1px solid #dbdbdb;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 8px;
+}
+
+.post-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+}
+
+.post-username {
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.post-image {
+    height: 180px;
+    background: linear-gradient(45deg, #8a2387, #e94057, #f27121);
+}
+
+/* Правая часть - форма входа */
+.form-section {
+    flex: 1;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.login-form-container {
+    width: 100%;
+    background: white;
+    border: 1px solid #dbdbdb;
+    border-radius: 1px;
+    padding: 40px 40px 20px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.instagram-logo {
+    font-family: 'Instagram Logo Font', cursive;
+    font-size: 42px;
+    font-weight: normal;
+    margin-bottom: 30px;
+    color: #262626;
+}
+
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px 12px;
+    background: #fafafa;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    font-size: 12px;
+    color: #262626;
+    outline: none;
+    height: 38px;
+}
+
+.login-form input::placeholder {
+    color: #8e8e8e;
+    font-size: 12px;
+}
+
+.login-form input:focus {
+    border-color: #a8a8a8;
+}
+
+.login-btn {
+    width: 100%;
+    background-color: #0095f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 9px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-btn:hover {
+    background-color: #0077c2;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 18px 0;
+    color: #8e8e8e;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #dbdbdb;
+}
+
+.divider span {
+    margin: 0 18px;
+    text-transform: lowercase;
+}
+
+.facebook-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #385185;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    margin-bottom: 25px;
+    width: 100%;
+    padding: 5px;
+}
+
+.facebook-login:hover {
+    text-decoration: underline;
+}
+
+.facebook-icon {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    color: #385185;
+}
+
+.forgot-password {
+    color: #00376b;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Блок регистрации */
+.signup-container {
+    width: 100%;
+    background: white;
+    border: 1px solid #dbdbdb;
+    border-radius: 1px;
+    padding: 25px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.signup-container p {
+    font-size: 14px;
+    color: #262626;
+    font-weight: 400;
+}
+
+/* Meta Verified */
+.meta-verified {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.meta-verified p {
+    font-size: 14px;
+    color: #8e8e8e;
+    font-weight: 500;
+}
+
+/* Футер */
+.footer {
+    max-width: 935px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 16px;
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    color: #8e8e8e;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.language-copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    color: #8e8e8e;
+    font-size: 12px;
+    flex-wrap: wrap;
+}
+
+.language-selector {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.dropdown {
+    font-size: 10px;
+}
+
+/* Разделительная линия */
+hr {
+    border: none;
+    height: 1px;
+    background-color: #dbdbdb;
+    width: 100%;
+    max-width: 350px;
+    margin: 20px 0;
+}
+
+/* Шрифт для логотипа Instagram */
+@font-face {
+    font-family: 'Instagram Logo Font';
+    src: url('https://fonts.cdnfonts.com/s/13949/Billabong.woff') format('woff');
+}

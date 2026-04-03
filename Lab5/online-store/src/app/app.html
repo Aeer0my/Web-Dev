@@ -1,0 +1,30 @@
+<div class="app-container">
+  <header class="app-header">
+    <h1>Online Store</h1>
+  </header>
+
+  <nav class="categories">
+    @for (category of categories; track category.id) {
+      <button
+        class="category-btn"
+        [class.active]="selectedCategoryId === category.id"
+        (click)="selectCategory(category.id)">
+        {{ category.name }}
+      </button>
+    }
+  </nav>
+
+  <main class="main-content">
+    @if (selectedCategoryId === null) {
+      <div class="welcome-message">
+        <h2>Добро пожаловать в наш магазин!</h2>
+        <p>Выберите категорию товаров выше</p>
+      </div>
+    } @else {
+      <app-product-list
+        [products]="currentProducts"
+        (deleteProduct)="onDeleteProduct($event)"
+        (likeProduct)="onLikeProduct($event)" />
+    }
+  </main>
+</div>

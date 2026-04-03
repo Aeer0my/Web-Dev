@@ -1,0 +1,171 @@
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.image-gallery {
+  position: relative;
+  background: #f5f5f5;
+  border-bottom: 1px solid #eee;
+}
+
+.main-image {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 8px 12px;
+  font-size: 18px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.nav-btn:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.prev {
+  left: 8px;
+}
+
+.next {
+  right: 8px;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 4px;
+  padding: 8px;
+  overflow-x: auto;
+  background: white;
+}
+
+.thumbnail {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  cursor: pointer;
+  opacity: 0.6;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: opacity 0.2s, border-color 0.2s;
+}
+
+.thumbnail:hover {
+  opacity: 0.8;
+}
+
+.thumbnail.active {
+  opacity: 1;
+  border-color: #007bff;
+}
+
+.product-info {
+  padding: 16px;
+}
+
+.product-info h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.price {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #e67e22;
+  margin: 8px 0;
+}
+
+.rating {
+  margin: 8px 0;
+  color: #ffc107;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.rating span:last-child {
+  color: #666;
+  margin-left: 4px;
+}
+
+.product-info p {
+  color: #666;
+  font-size: 0.9em;
+  line-height: 1.4;
+  margin: 8px 0;
+}
+
+.likes {
+  margin: 8px 0;
+  font-size: 1.1em;
+  color: #e74c3c;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.buy-btn, .like-btn, .share-btn, .delete-btn {
+  flex: 1;
+  padding: 8px 12px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  font-size: 14px;
+  transition: opacity 0.2s;
+  min-width: 70px;
+}
+
+.buy-btn {
+  background: #dc3545;
+  color: white;
+}
+
+.like-btn {
+  background: #e74c3c;
+  color: white;
+}
+
+.share-btn {
+  background: #25D366;
+  color: white;
+}
+
+.share-btn:last-of-type {
+  background: #0088cc;
+}
+
+.delete-btn {
+  background: #6c757d;
+  color: white;
+}
+
+.buy-btn:hover, .like-btn:hover, .share-btn:hover, .delete-btn:hover {
+  opacity: 0.9;
+}

@@ -1,0 +1,35 @@
+<div class="product-card">
+  <div class="image-gallery">
+    <button (click)="prevImage()" class="nav-btn prev">❮</button>
+    <img [src]="product.images[currentImageIndex]" [alt]="product.name" class="main-image">
+    <button (click)="nextImage()" class="nav-btn next">❯</button>
+    <div class="thumbnails">
+      @for (img of product.images; track img; let i = $index) {
+        <img [src]="img" (click)="setImage(i)"
+             [class.active]="i === currentImageIndex" class="thumbnail">
+      }
+    </div>
+  </div>
+
+  <div class="product-info">
+    <h3>{{ product.name }}</h3>
+    <p class="price">{{ product.price | currency:'KZT':'symbol-narrow':'1.0-0' }}</p>
+    <div class="rating">
+      @for (star of [1,2,3,4,5]; track star) {
+        <span>⭐</span>
+      }
+      <span>({{ product.rating }})</span>
+    </div>
+    <p>{{ product.description }}</p>
+    <div class="likes">
+      <span>❤️ {{ product.likes }}</span>
+    </div>
+    <div class="buttons">
+      <a [href]="product.link" target="_blank" class="buy-btn">Kaspi</a>
+      <button (click)="onLike()" class="like-btn">👍 Like</button>
+      <button (click)="shareOnWhatsApp()" class="share-btn">WhatsApp</button>
+      <button (click)="shareOnTelegram()" class="share-btn">Telegram</button>
+      <button (click)="onDelete()" class="delete-btn">🗑 Delete</button>
+    </div>
+  </div>
+</div>
