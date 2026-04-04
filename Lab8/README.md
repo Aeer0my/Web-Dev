@@ -100,4 +100,4 @@ PUT /api/products/1/
 }
 ```
 ## Author
-Arslan, Web Development Course
+Arslan Kassymov, Web Development Course
