@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f8393f34-9156-475d-860a-39fca9507e15" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Lab8/shop_back/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lab8/shop_back/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab8/shop_back/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/Lab8/shop_back/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab8/shop_back/shop_back/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lab8/shop_back/shop_back/settings.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="tsconfig.json" />
+        <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="38qJgEBkjAz9WN7YBNnbq9GcxQY" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "master",
+    "javascript.preferred.runtime.type.id": "node",
+    "last_opened_file_path": "C:/Users/arsla/OneDrive/Документы/Web-Dev",
+    "list.type.of.created.stylesheet": "CSS",
+    "nodejs_interpreter_path": "C:/Users/arsla/AppData/Roaming/JetBrains/WebStorm2025.3/node/versions/24.13.0/node",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "ts.external.directory.path": "C:\\Users\\arsla\\OneDrive\\Документы\\Web-Dev\\lab4\\task1\\angular-tutorial\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\arsla\OneDrive\Документы\Web-Dev\Lab1\Udacity\Lesson 4" />
+      <recent name="C:\Users\arsla\OneDrive\Документы\Web-Dev\Lab1\Udacity\Lesson 2" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\arsla\OneDrive\Документы\Web-Dev\Web-Dev" />
+      <recent name="C:\Users\arsla\OneDrive\Документы\Web-Dev" />
+      <recent name="C:\Users\arsla\OneDrive\Документы\Web-Dev\Lab3\task1" />
+      <recent name="C:\Users\arsla\OneDrive\Документы\Web-Dev\Lab2\lab2-assignment\spotify-signup" />
+      <recent name="C:\Users\arsla\OneDrive\Документы\Web-Dev\Lab1\Udacity\Lesson 4\css" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.29346.242" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f8393f34-9156-475d-860a-39fca9507e15" name="Changes" comment="" />
+      <created>1769521277275</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1769521277275</updated>
+      <workItem from="1769521278186" duration="2259000" />
+      <workItem from="1769588096587" duration="3407000" />
+      <workItem from="1769602827313" duration="1450000" />
+      <workItem from="1769675678383" duration="2800000" />
+      <workItem from="1769678857377" duration="18000" />
+      <workItem from="1769682919541" duration="160000" />
+      <workItem from="1769857254936" duration="4041000" />
+      <workItem from="1769864360910" duration="218000" />
+      <workItem from="1770462827765" duration="798000" />
+      <workItem from="1770466447850" duration="718000" />
+      <workItem from="1771586805835" duration="483000" />
+      <workItem from="1771587617452" duration="1155000" />
+      <workItem from="1771672271127" duration="4751000" />
+      <workItem from="1772276831565" duration="796000" />
+      <workItem from="1774696039434" duration="206000" />
+      <workItem from="1774697944112" duration="1823000" />
+      <workItem from="1774699875874" duration="36000" />
+      <workItem from="1775232077012" duration="393000" />
+      <workItem from="1775243376444" duration="328000" />
+      <workItem from="1775243760690" duration="1008000" />
+      <workItem from="1775293386720" duration="3080000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

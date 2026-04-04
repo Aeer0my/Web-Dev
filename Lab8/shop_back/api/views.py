@@ -1,6 +1,7 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, filters
 from rest_framework.decorators import action
 from rest_framework.response import Response
+from django_filters.rest_framework import DjangoFilterBackend
 from .models import Category, Product
 from .serializers import CategorySerializer, ProductSerializer
 
@@ -15,14 +16,19 @@ class CategoryViewSet(viewsets.ModelViewSet):
         serializer = ProductSerializer(products, many=True)
         return Response(serializer.data)
 
+
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
 
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
+    filterset_fields = ['category', 'is_active']
+    search_fields = ['name']
+    ordering_fields = ['name', 'price']
+
     def get_queryset(self):
         queryset = Product.objects.all()
 
-        # Фильтрация (как в Lab8)
         category_id = self.request.query_params.get('category')
         if category_id:
             queryset = queryset.filter(category_id=category_id)
@@ -37,4 +43,25 @@ class ProductViewSet(viewsets.ModelViewSet):
         if search:
             queryset = queryset.filter(name__icontains=search)
 
+        ordering = self.request.query_params.get('ordering')
+        if ordering:
+            if ordering.lstrip('-') in ['name', 'price']:
+                queryset = queryset.order_by(ordering)
+
         return queryset
+
+    @action(detail=False, methods=['get'])
+    def active(self, request):
+        queryset = Product.objects.filter(is_active=True)
+
+        search_param = request.query_params.get('search')
+        if search_param:
+            queryset = queryset.filter(name__icontains=search_param)
+
+        ordering_param = request.query_params.get('ordering')
+        if ordering_param:
+            if ordering_param.lstrip('-') in ['name', 'price']:
+                queryset = queryset.order_by(ordering_param)
+
+        serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data)
