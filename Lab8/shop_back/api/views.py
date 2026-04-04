@@ -1,78 +1,40 @@
-from django.shortcuts import get_object_or_404
-from django.http import JsonResponse
+from rest_framework import viewsets
+from rest_framework.decorators import action
+from rest_framework.response import Response
 from .models import Category, Product
+from .serializers import CategorySerializer, ProductSerializer
 
-def products_list(request):
-    products = Product.objects.all()
+class CategoryViewSet(viewsets.ModelViewSet):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
 
-    # Фильтр по категории
-    category_id = request.GET.get('category')
-    if category_id:
-        products = products.filter(category_id=category_id)
+    @action(detail=True, methods=['get'])
+    def products(self, request, pk=None):
+        category = self.get_object()
+        products = category.products.filter(is_active=True)
+        serializer = ProductSerializer(products, many=True)
+        return Response(serializer.data)
 
-    # Фильтр по активности
-    active = request.GET.get('active')
-    if active == 'true':
-        products = products.filter(is_active=True)
-    elif active == 'false':
-        products = products.filter(is_active=False)
+class ProductViewSet(viewsets.ModelViewSet):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
 
-    # Поиск по имени
-    search = request.GET.get('search')
-    if search:
-        products = products.filter(name__icontains=search)
+    def get_queryset(self):
+        queryset = Product.objects.all()
 
-    data = [
-        {
-            'id': p.id,
-            'name': p.name,
-            'price': p.price,
-            'description': p.description,
-            'count': p.count,
-            'is_active': p.is_active,
-            'category': p.category.name,
-            'category_id': p.category.id
-        }
-        for p in products
-    ]
-    return JsonResponse(data, safe=False)
+        # Фильтрация (как в Lab8)
+        category_id = self.request.query_params.get('category')
+        if category_id:
+            queryset = queryset.filter(category_id=category_id)
 
-def product_detail(request, id):
-    product = get_object_or_404(Product, id=id)
-    data = {
-        'id': product.id,
-        'name': product.name,
-        'price': product.price,
-        'description': product.description,
-        'count': product.count,
-        'is_active': product.is_active,
-        'category': product.category.name,
-        'category_id': product.category.id
-    }
-    return JsonResponse(data)
+        active = self.request.query_params.get('active')
+        if active == 'true':
+            queryset = queryset.filter(is_active=True)
+        elif active == 'false':
+            queryset = queryset.filter(is_active=False)
 
-def categories_list(request):
-    categories = Category.objects.all()
-    data = [{'id': c.id, 'name': c.name} for c in categories]
-    return JsonResponse(data, safe=False)
+        search = self.request.query_params.get('search')
+        if search:
+            queryset = queryset.filter(name__icontains=search)
 
-def category_detail(request, id):
-    category = get_object_or_404(Category, id=id)
-    data = {'id': category.id, 'name': category.name}
-    return JsonResponse(data)
-
-def category_products(request, id):
-    category = get_object_or_404(Category, id=id)
-    products = category.products.filter(is_active=True)
-    data = [
-        {
-            'id': p.id,
-            'name': p.name,
-            'price': p.price,
-            'description': p.description,
-            'count': p.count,
-            'is_active': p.is_active
-        }
-        for p in products
-    ]
-    return JsonResponse(data, safe=False)
+        return queryset
