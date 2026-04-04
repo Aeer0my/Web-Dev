@@ -13,27 +13,27 @@ python manage.py runserver
 ```
 
 ## API Endpoints
-```angular2html
-Method	URL	Description
-GET	/api/products/	List all products
-GET	/api/products/1/	Get product by ID
-POST	/api/products/	Create product
-PUT	/api/products/1/	Update product
-DELETE	/api/products/1/	Delete product
-GET	/api/categories/	List all categories
-GET	/api/categories/1/	Get category by ID
-GET	/api/categories/1/products/	Get products by category
-POST	/api/categories/	Create category
-PUT	/api/categories/1/	Update category
-DELETE	/api/categories/1/	Delete category
+```text
+Method	      URL	                Description
+GET	/api/products/	              List all products
+GET	/api/products/1/	      Get product by ID
+POST	/api/products/	              Create product
+PUT	/api/products/1/	      Update product
+DELETE	/api/products/1/	      Delete product
+GET	/api/categories/	      List all categories
+GET	/api/categories/1/	      Get category by ID
+GET	/api/categories/1/products/   Get products by category
+POST	/api/categories/	      Create category
+PUT	/api/categories/1/	      Update category
+DELETE	/api/categories/1/	      Delete category
 ```
 
 ## Filters
-```angular2html
-Filter	Example	Description
-category	/api/products/?category=1	Filter by category ID
-active	/api/products/?active=true	Show only active products
-search	/api/products/?search=iphone	Search by name
+```text
+Filter	                  Example	                                      Description
+category	/api/products/?category=1	                        Filter by category ID
+active	        /api/products/?active=true	                        Show only active products
+search	        /api/products/?search=iphone	                        Search by name
 combined	/api/products/?category=1&active=true&search=iphone	All filters together
 ```
 
